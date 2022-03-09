@@ -6,7 +6,7 @@
 /*   By: dhomem-d <dhomem-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:53:29 by dhomem-d          #+#    #+#             */
-/*   Updated: 2022/01/27 14:18:23 by dhomem-d         ###   ########.fr       */
+/*   Updated: 2022/03/09 19:09:16 by dhomem-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 typedef struct s_list
 {
@@ -78,5 +82,12 @@ int		ft_printf_c(char data);
 int		ft_printf_di(int data);
 int		ft_printf_s(char *data);
 int		needsomelines(char c);
+int		find_nl(char *s);
+char	*ft_substr_gnl(char const *s, size_t start, size_t end);
+size_t	ft_strlen_gnl(const char *s);
+char	*ft_strdup_gnl(char const *s);
+char	*ft_strjoin_gnl(char const *s1, char const *s2);
+char	*get_next_line(int fd);
+char	*check_return(char **s, int bytes);
 
 #endif
